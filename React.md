@@ -18,3 +18,22 @@ Here are some key aspects that differentiate React from other JavaScript framewo
 
 4. **Component-based:**
    React encourages a component-based architecture, where UIs are broken down into modular and reusable components. Component can be composed and nested to create complex UI structures.
+
+## **What is the purpose of React's Virtual DOM ?**
+
+The purpose of React virtual DOM is to provides a performant and efficient way to update and render the user interface(UI) of a React application.
+DOM is the representation of the HTML structure on a web page, and manipulating the DOM directly can be expensive. When a change occurs in a React component, instead of immediately updating the actual DOM, React updates a lightweight copy of the DOM called Virtual DOM.
+
+### **How Virtual DOM works:**
+
+**Initial Rendering:**
+When a React component is initially rendered, React creates a representation of the component's UI in the form of a virtual DOM tree mirrors the structure of actual DOM.
+
+**Reconciliation:**
+When a component state or props change, React performs a process called reconiliation. It compares the previous Virtual DOM tree with new one generated from the updated state and props.
+
+**Diffing and Patching:**
+During the reconciliation process, React efficiently determines the minimal number of changes needed to updates the actual DOM. It performs a diffing algorithm to identify the difference (`diffing`) between the previous and new Virtual DOM trees.
+
+**Updating the Actual DOM:**
+Once the diffing is identied, React applies the necessary changes to the actual DOM, It updates only the parts of DOM that have changed, minimizing the amount of manipulation required.
